@@ -1,0 +1,14 @@
+HubCrew: Named-Agent Reasoning Architecture for One-Person Home Ops
+
+Solo operators coordinating many agents lose preferences, unfinished work and failed attempts at handoff. HubCrew defines a three-part handoff contract: unfinished work, failed paths and still-valid decisions. A single agent has one entry and its own scheduler; named routing and collaboration sit above that core. Constitutions, skills and reviewed lessons guide the reasoning loop.
+
+Demonstrated sponsor work:
+Meterless H-MEM: a public TypeScript CLI bridge calls the official reference engine for remember, ask, audit and sleep. The demo shows a real write followed by retrieval in a new process, with memory ID, relevance and provenance. It uses retrieval-only mode and deterministic reference hash vectors.
+Zetaris: live local Docker Compose deployment, verify.sh 9/9 PASS; SELECT 1, NY_TAXI.taxi_zones LIMIT 5 and TPCDS_DB.reason ORDER BY r_reason_sk LIMIT 5 verified. The video shows the browser executing the TPCDS query and returning five rows. Documented P0-P2 priorities are a manual demo mapping of supplied samples, not production home telemetry.
+
+These are two working local sponsor bridges. Automatic end-to-end HubCards/H-MEM/Zetaris dispatch and alert delivery are architecture direction, not claimed as demonstrated here.
+
+Pre-existing declared: HubCards, home multi-agent crew (家用班组), imwire, teamrecall and benefit. Hackathon delta: this public repository, reasoning-architecture documentation, sponsor bridges/live query evidence, demo and slides. No NVIDIA/Nemotron execution is claimed.
+
+Site: https://www.wangwu.ai
+Demo: 3:10, 1080p; recorded H-MEM output plus actual Zetaris browser capture. Reproduction and evidence are in the repository.
