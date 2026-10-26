@@ -1,0 +1,4 @@
+engine source: vendor/hmem (official Meterless H-MEM reference) | state: /var/folders/l8/ypxrqgkn1w95ps1tlly3821m0000gn/T/hubcrew-demo-hmem-e0q3octp
+remembered mem-1 via Mining -> Store [short_term]
+  [live_decision] We always deploy HubCrew only after green CI and a rollback check.
+  tags: event:chat_message, handoff:live_decision

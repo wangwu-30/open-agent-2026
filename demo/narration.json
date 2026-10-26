@@ -1,0 +1,44 @@
+[
+  {
+    "id": "01-intro",
+    "target_seconds": 15,
+    "image": "broll/01-intro.png",
+    "text": "HubCrew is a reasoning architecture for one person working with many named agents. The challenge is continuity: how can the next agent preserve decisions, avoid failed paths, and act on the right context?"
+  },
+  {
+    "id": "02-handoff",
+    "target_seconds": 25,
+    "image": "broll/02-handoff.png",
+    "text": "Our handoff contract has three parts. Unfinished work says what remains open. Failed paths record what has already been tried and why it did not work. Live decisions preserve the preferences and constraints that still govern action. Named routing passes this context into the next session. This is the architecture we are building toward."
+  },
+  {
+    "id": "03-hmem-remember",
+    "target_seconds": 22,
+    "image": "broll/03-hmem-remember.png",
+    "text": "Here is actual recorded output from our Meterless H MEM bridge. We remember a deployment decision: deploy HubCrew only after green C I and a rollback check. The official reference engine mines and stores the input as memory one. This command then exits."
+  },
+  {
+    "id": "04-hmem-ask",
+    "target_seconds": 33,
+    "image": "broll/04-hmem-ask.png",
+    "text": "A second command starts a new process and asks for the current deployment decision. The result comes from H MEM retrieval. The screen shows the stored text, its memory identifier, relevance, and provenance. The source is the actual chat message interaction. This local demonstration uses the reference engine's deterministic hash vectors and retrieval only mode. It does not substitute a prewritten answer for the engine's result."
+  },
+  {
+    "id": "05-zetaris",
+    "target_seconds": 40,
+    "image": null,
+    "text": "Now the data plane: Zetaris running locally in the browser. We query the reason table from the T P C D S sample database, order by the reason key, and limit the result to five rows. The returned rows are visible in the SQL editor. Local platform verification passed all nine checks. This proves the live query path. Combining these governed facts with an agent's decision loop is the architecture direction, beyond the two sponsor bridges demonstrated here."
+  },
+  {
+    "id": "06-architecture",
+    "target_seconds": 30,
+    "image": "broll/06-architecture.png",
+    "text": "The architecture keeps one agent small: one entry and its own scheduler. Named routing and structured handoff belong to a separate collaboration layer. Constitutions, skills, and reviewed lessons guide reasoning. The green blocks identify the two local sponsor bridges shown in this recording. The upper row describes the intended integration. The public repository contains the architecture, reproducible bridge commands, evidence, and slides."
+  },
+  {
+    "id": "07-outro",
+    "target_seconds": 25,
+    "image": "broll/07-outro.png",
+    "text": "Meterless and Zetaris are shown. Pre-existing components are declared: HubCards, the home crew, imwire, teamrecall, and benefit. The hackathon delta is the public repository, sponsor bridges, and this demo and slide deck. HubCrew, Track three, reasoning architecture. Find the project at wangwu dot A I, and the repository shown on screen."
+  }
+]

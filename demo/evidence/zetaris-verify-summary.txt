@@ -1,0 +1,6 @@
+Time: 2026-10-27 01:21:24 北京时间 (UTC+08:00)
+Command: ./verify.sh
+Exit code: 0
+PASS markers: 9
+FAIL markers: 0
+Raw stdout/stderr captured in memory only and not retained.

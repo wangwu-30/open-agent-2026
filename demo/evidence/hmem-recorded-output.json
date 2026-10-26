@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "npx",
+      "tsx",
+      "notebook.ts",
+      "remember",
+      "[live_decision] We always deploy HubCrew only after green CI and a rollback check."
+    ],
+    "exit_code": 0,
+    "stdout": "engine source: vendor/hmem (official Meterless H-MEM reference) | state: /var/folders/l8/ypxrqgkn1w95ps1tlly3821m0000gn/T/hubcrew-demo-hmem-e0q3octp\nremembered mem-1 via Mining -> Store [short_term]\n  [live_decision] We always deploy HubCrew only after green CI and a rollback check.\n  tags: event:chat_message, handoff:live_decision\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "npx",
+      "tsx",
+      "notebook.ts",
+      "ask",
+      "current live deployment decision deploy"
+    ],
+    "exit_code": 0,
+    "stdout": "engine source: vendor/hmem (official Meterless H-MEM reference) | state: /var/folders/l8/ypxrqgkn1w95ps1tlly3821m0000gn/T/hubcrew-demo-hmem-e0q3octp\nquestion: current live deployment decision deploy\nretrieval query: current live deployment decision deploy\nmode: retrieval-only | threshold: 0.1 | strategy: minimal\ntrace: hybrid ranking for \"current live deployment decision deploy\" (domain: tech)\nRetrieved context for \"current live deployment decision deploy\":\n- [mem-1] [live_decision] We always deploy HubCrew only after green CI and a rollback check. (relevance 0.2192)\nprovenance mem-1: {\"source\":\"interaction:chat_message\",\"origin\":\"chat_message\",\"learnedAt\":1793035120122,\"label\":\"mined from chat_message\",\"tags\":[\"event:chat_message\",\"handoff:live_decision\"]}\naudit a returned id: npx tsx notebook.ts audit mem-1\n",
+    "stderr": ""
+  }
+]

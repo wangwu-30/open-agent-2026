@@ -1,0 +1,9 @@
+# Rebuildable local narration and segment intermediates.
+audio/
+segments/
+__pycache__/
+raw/
+zetaris-live.mp4
+hmem-live.mp4
+hmem-remember-live.mp4
+hmem-ask-live.mp4

@@ -16,4 +16,4 @@
 ## Sponsors
 
 - [Meterless H-MEM bridge](./sponsors/hmem-notebook/README.md)：Track 03 HubCrew 的本地交接记忆演示，包含三类 seed、跨进程检索、provenance 与审计；安装和录屏步骤见子目录 README。
-- [Zetaris 接入预备](./sponsors/zetaris/SETUP.md)：[官方入门](https://zetaris.github.io/getting-started/)与本机 / AWS Free Tier 路线、客户端配置和 preflight；[只读 SQL 与 HubCrew 告警优先级草稿](./sponsors/zetaris/query_home_ops.md)说明 Track 03 数据层计划。**实例未装则 blocker**：当前尚无实例、无真实查询结果，预备文档不代表已完成 [Task B](./SPONSOR-PLAN.md#task-b--zetaris规则必接可能成-blocker) 接入。官方仓库以子模块固定版本，首次使用先执行 `git submodule update --init sponsors/zetaris/getting-started`。
+- **Zetaris 本机只读样本查询已实跑**（2026-10-26，北京时间）：Mac mini 实例 `./verify.sh` 9/9 PASS，`SELECT 1`、`NY_TAXI.taxi_zones LIMIT 5`、`TPCDS_DB.reason ORDER BY r_reason_sk LIMIT 5` 均通过，见 [LIVE.md](./sponsors/zetaris/LIVE.md)。[查询与演示决策记录](./sponsors/zetaris/query_home_ops.md#3-已实跑样本结果与-hubcrew-演示决策2026-10-26)展示 5 条 reason 样本到交接优先级的人工映射；样本不代表真实家用故障，尚未自动接通 HubCrew、H-MEM 或告警出口。[接入预备文档](./sponsors/zetaris/SETUP.md)保留安装与客户端参考。官方仓库以子模块固定版本，首次使用先执行 `git submodule update --init sponsors/zetaris/getting-started`。
