@@ -5,6 +5,7 @@ vendor/
 
 # Local credentials and machine files.
 .env
+# Includes .env.local at any depth; only .env.example may be committed.
 .env.*
 !.env.example
 *.pem
