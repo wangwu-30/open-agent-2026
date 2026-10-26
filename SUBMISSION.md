@@ -51,13 +51,11 @@ Solo operators who run many specialized agents at home hit the same failure mode
 Related (declare in form): https://github.com/wangwu-30/imwire · https://github.com/wangwu-30/teamrecall
 
 ### Sponsor tech — Zetaris
-`[[Describe after SPONSOR-PLAN tasks land]]`  
-Planned: Zetaris instance (local or AWS) + read-only Lightning SQL over sample/home-ops tables; agent queries before deciding handoff priority / alert urgency. Setup refs: https://zetaris.github.io/getting-started/
+**Live (2026-10-26):** Docker Compose on Mac mini (`~/zetaris/zetaris-platform`); `./verify.sh` 9/9 PASS; UI http://localhost:3000. Read-only Lightning SQL via UI→API→driver verified (`SELECT 1`, `NY_TAXI.taxi_zones`, `TPCDS_DB.reason` → HubCrew P0–P2 handoff mapping). Evidence: `sponsors/zetaris/LIVE.md`, `sponsors/zetaris/query_home_ops.md` §3. Setup: https://zetaris.github.io/getting-started/
 
 ### Sponsor tech — Meterless
-`[[Describe after SPONSOR-PLAN tasks land]]`  
-Planned: Meterless **H-MEM** via `agentathon-starter` (`remember`/`ask`/`audit`/`sleep`) as the handoff+constitution memory spine. Starter: https://github.com/Meterless/Meterless/tree/main/templates/agentathon-starter  
-Nightshift: optional stretch if Mac mini GPU path ready—not required for minimal score.
+**Live:** Meterless **H-MEM** via `agentathon-starter` (`remember`/`ask`/`audit`/`sleep`) as handoff+constitution memory spine — `sponsors/hmem-notebook/` (fed9a1d). Starter: https://github.com/Meterless/Meterless/tree/main/templates/agentathon-starter
+Nightshift: optional stretch only; not required for minimal score.
 
 ### Cursor / NVIDIA (if asked)
 - Cursor/Codex: used to implement sponsor bridges and docs on Mac mini (`taskq` jobs).
