@@ -1,0 +1,3 @@
+[unfinished_work] We must finish the HubCards alert acknowledgement smoke test before the next handoff.
+[failed_path] We should avoid the failed push-only alert path because offline phones missed the notification; retain a manual acknowledgement.
+[live_decision] We decided the current live deployment decision: deploy HubCrew on the Mac mini only after green CI and a verified rollback snapshot.

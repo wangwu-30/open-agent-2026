@@ -1,0 +1,17 @@
+{
+  "name": "hubcrew-hmem-notebook",
+  "version": "0.1.0",
+  "description": "Track03 HubCrew handoff demo using the official Meterless H-MEM reference.",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "setup": "npx --yes degit meterless/meterless/engines/hmem/reference#1742dec56a66e58eef9dda2d2b865823758ca8cd vendor/hmem && cd vendor/hmem && npm install --no-audit --no-fund",
+    "notebook": "tsx notebook.ts",
+    "test": "tsx --test tests/handoff.test.ts"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}

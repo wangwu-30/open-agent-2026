@@ -1,0 +1,13 @@
+# Dependencies and H-MEM runtime state are installed/generated locally.
+node_modules/
+vendor/
+.notebook/
+
+# Local credentials and machine files.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+*.log

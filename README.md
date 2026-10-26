@@ -12,3 +12,8 @@
 | [CHECKLIST.md](./CHECKLIST.md) | 佳恒要点步骤 + blockers |
 
 代码接入：**不要让云端 bot 改产品仓**；按 SPONSOR-PLAN 派 Mac mini。
+
+## Sponsors
+
+- [Meterless H-MEM bridge](./sponsors/hmem-notebook/README.md)：Track 03 HubCrew 的本地交接记忆演示，包含三类 seed、跨进程检索、provenance 与审计；安装和录屏步骤见子目录 README。
+- Zetaris：尚属 [SPONSOR-PLAN.md Task B](./SPONSOR-PLAN.md#task-b--zetaris规则必接可能成-blocker)，本次 Meterless 桥不代表已完成 Zetaris 接入。
