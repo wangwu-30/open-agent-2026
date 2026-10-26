@@ -132,3 +132,11 @@ python3 scripts/preflight.py --env-file .env.local
 按 [query_home_ops.md](./query_home_ops.md) 逐条预览和执行 `SELECT 1`、`SHOW LIGHTNING DATABASES`、元数据查询及 `LIMIT 5`。记录真实执行时间、实例类型、协议、SQL、实际行数 / 脱敏摘要，再替换文中的【待实跑替换】；演示策略与真实家用告警分开说明。
 
 Task B 完成还需要真实查询结果影响至少一次推理前的优先级 / 交接顺序，并留下可复核的决策前后证据。当前提交只完成可推送的预备工作。
+
+## Install status (2026-10-26 北京时间 ≈01:00)
+- Hobby / Run locally on **Mac mini** (`~/zetaris/zetaris-platform`)
+- Registry login OK; `./preflight.sh` PASS (WARN: arm64 emulation, ~7GB Docker RAM)
+- `docker compose pull` + `up -d` OK; `./verify.sh` **9/9 PASS**
+- UI http://localhost:3000 — admin email from compose `.env` / `~/zetaris/registry.env` (chmod 600, not in git)
+- JDBC jar: `jdbc/ndp-jdbc-driver-2.4.3.1-7eff043-driver.jar` (Java runtime not yet installed on mini; REST/UI path verified)
+- Sample SQL: TPCDS_DB.reason and NY_TAXI.taxi_zones readable — see query_home_ops.md §3

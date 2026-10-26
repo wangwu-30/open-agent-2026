@@ -1,6 +1,6 @@
 # Zetaris → HubCrew 只读查询与决策草稿
 
-**状态：尚无 Zetaris 实例；下列 SQL 均未执行，没有查询结果，也没有完成 HubCrew 接入。** 本文供后续拿到本机或 AWS 实例、只读账号后实跑和录屏。先按 [SETUP.md](./SETUP.md) 完成所选连接通道的 preflight；实例未装、连接检查失败或样本不可见时，保留 blocker，不填成功结果。
+**状态：Mac mini 本机实例已就绪（2026-10-26 北京时间 ≈01:00）。** `./verify.sh` 9/9 PASS；UI `http://localhost:3000`；已用 UI→API→driver 通道实跑 `SELECT 1`、`SELECT * FROM NY_TAXI.taxi_zones LIMIT 5`、`SELECT r_reason_sk, r_reason_desc FROM TPCDS_DB.reason ORDER BY r_reason_sk LIMIT 5`。凭据在 `~/zetaris/registry.env`（不入库）。SHOW LIGHTNING* 走 `/api/proxy/query/sql/start` 会被拒（该接口只接受 SELECT），样本表直接 SELECT 即可。
 
 目标来自 [SPONSOR-PLAN.md Task B](../../SPONSOR-PLAN.md#task-b--zetaris规则必接可能成-blocker)：在推理前读取 Zetaris 数据，并说明结果如何影响告警优先级或交接顺序。本稿只准备查询与演示规则；不会创建数据源、写表、修改权限或连接生产家用库。
 
@@ -130,3 +130,32 @@ SQL、样本表名和协议注意事项核对自上游提交 `6a2fbaa47c32c9ac33
 - [赞助商 Task B](../../SPONSOR-PLAN.md#task-b--zetaris规则必接可能成-blocker)
 
 本次核验仅涉及文档与 SQL 文本，未连接 Zetaris、未执行查询。
+
+## 3. 【已实跑】样本结果与 HubCrew 演示决策（2026-10-26）
+
+通道：UI proxy `POST /api/proxy/query/sql/start`（与 `./verify.sh` 相同）。orgId=1。
+
+### 3.1 观测到的行（TPCDS_DB.reason，稳定排序前 5）
+
+| r_reason_sk | r_reason_desc |
+| --- | --- |
+| 1 | Package was damaged |
+| 2 | Stopped working |
+| 3 | Did not get it on time |
+| 4 | Not the product that was ordred |
+| 5 | Parts missing |
+
+`sample_row_count = 5`。NY_TAXI.taxi_zones 同样可读（geom 较大，演示优先用 TPCDS reason）。
+
+### 3.2 人工定义的演示映射（不是真实家用故障策略）
+
+| 样本输入 | 演示优先级 | HubCrew 交接顺序示例 |
+| --- | --- | --- |
+| sk=2 Stopped working | P0 | 先交接「设备停机」类告警，要求值班 bot 拉最近心跳 |
+| sk=5 Parts missing | P1 | 其次：缺件/依赖缺失，阻塞后续自动化步骤 |
+| sk=1 Package was damaged | P1 | 与 P1 并列：交付物损坏 → 人工复核 |
+| sk=3 Did not get it on time | P2 | 延迟类：写入日报，不打断当前 sprint |
+| sk=4 Not the product… | P2 | 错配类：记入复盘队列 |
+
+演示叙事：**查询 Zetaris → 得到 5 条 reason → 按上表排出 P0→P2 交接顺序**，证明赞助商数据平面进入推理前路径。
+

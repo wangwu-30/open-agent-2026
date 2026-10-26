@@ -13,7 +13,7 @@
 | 2 | 确认黑客松平台 **Submission** 表单字段；对照 `SUBMISSION.md` 粘贴 | 佳恒 | ☐ |
 | 3 | 建 public 仓 **`wangwu-30/open-agent-2026`**（路径 C）并推送 README | 佳恒点头 → Mac mini Codex | ☐ |
 | 4 | **Meterless H-MEM** 按 `SPONSOR-PLAN` Task A 跑通并可录屏 | Mac mini Codex/taskq | ☐ |
-| 5 | **Zetaris** 实例就绪 + 只读 SQL + 决策链说明（Task B） | 佳恒装实例 + Codex | ☐ |
+| 5 | **Zetaris** 实例就绪 + 只读 SQL + 决策链说明（Task B） | Mac mini 本机 + 助手 | ✅ 2026-10-26 verify 9/9 + TPCDS/NY_TAXI SQL |
 | 6 | 录 **1–4 min** demo（`DEMO-SCRIPT.md`），上传得链 | 佳恒 | ☐ |
 | 7 | 做 **slide deck**（提纲在 DEMO-SCRIPT），上传得链 | 佳恒 / 可派助手出初稿 | ☐ |
 | 8 | 提交表填写赞助商说明；**declare 预存代码**；检查无密钥 | 佳恒 | ☐ |
@@ -68,7 +68,7 @@
 
 ## Blockers（按可能性）
 
-1. **Zetaris 实例未装 / 无 AWS Free Tier / 本机规格不够** → 冠军级合规风险。动作：今晚先走 getting-started「Run locally」或 AWS 清单；卡住就写进提交诚实说明并仍尽量出 sample 查询录屏。
+1. ~~Zetaris 实例未装~~ → **已解除**：Mac mini Run locally，verify 9/9，样本 SQL 已跑通（见 sponsors/zetaris/LIVE.md）。
 2. **公开仓未建** → 用路径 C，30–60 分钟可解。
 3. **HubCards 无法录屏** → 用 DEMO-SCRIPT 备用 B-roll + 静态 UI。
 4. **Meterless `npm run setup` 失败** → 查 vendor/；按官方 README，setup 不可跳。

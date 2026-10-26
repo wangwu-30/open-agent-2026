@@ -8,7 +8,7 @@
 | [SUBMISSION.md](./SUBMISSION.md) | 提交表英文字段 + 中文对照 |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | 推理架构 mermaid |
 | [DEMO-SCRIPT.md](./DEMO-SCRIPT.md) | 1–4 分钟分镜 + 幻灯提纲 |
-| [SPONSOR-PLAN.md](./SPONSOR-PLAN.md) | Meterless/Zetaris 今晚任务（交 Codex/taskq） |
+| [SPONSOR-PLAN.md](./SPONSOR-PLAN.md) | Meterless/Zetaris (live on Mac mini — see sponsors/zetaris/LIVE.md) 今晚任务（交 Codex/taskq） |
 | [CHECKLIST.md](./CHECKLIST.md) | 佳恒要点步骤 + blockers |
 
 代码接入：**不要让云端 bot 改产品仓**；按 SPONSOR-PLAN 派 Mac mini。
