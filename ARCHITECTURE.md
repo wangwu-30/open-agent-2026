@@ -1,5 +1,7 @@
 # ARCHITECTURE — HubCrew × Track 03
 
+**提交材料已归档：Track 03 / HubCrew 已 Submitted。** 状态见 [demo/SUBMISSION-STATUS.md](./demo/SUBMISSION-STATUS.md)。本文保留架构设计；实际演示为两个本地赞助桥，自动端到端 HubCards / H-MEM / Zetaris 派工和告警送达仍是架构方向，见 [实际提交说明](./demo/submission-description.txt)。
+
 对齐 Track 03：**data → knowledge → memory → reasoning → reliable decisions & actions**。
 
 ## 分层主张（佳恒口径，勿改）
@@ -94,10 +96,10 @@ flowchart TB
 - **Phone**: HubCards（人）
 - **Mac mini**: 班组 agent 进程、Codex/taskq、Meterless bridge、可选 Zetaris client
 - **Public GitHub**: `open-agent-2026`（文档+桥）· `imwire` · `teamrecall`
-- **Private**: HubCards 源码 / 班组完整运行时（demo 录屏证明，提交表 declare）
+- **Private**: HubCards 源码 / 班组完整运行时（已在提交表声明为预存代码；实际演示范围见提交说明）
 
-## 非目标（今晚）
+## 本次提交范围之外
 
 - 不把公司飞书班组与家用部署打成一套 demo。
-- 不伪造 Nightshift/Nemotron，除非 Mac mini 真跑通。
-- Bot **不写产品代码**；桥接由 Mac mini Codex/taskq 按 `SPONSOR-PLAN.md` 落地。
+- 本次未声明 Nightshift/Nemotron 执行。
+- 本仓交付为材料与赞助桥；已交付范围及证据见 [SPONSOR-PLAN.md](./SPONSOR-PLAN.md)。

@@ -1,12 +1,14 @@
-# SUBMISSION — 可粘贴字段草稿
+# SUBMISSION — 字段草稿归档 / Submitted
 
-> 入口：https://hackathon.genai.works/event/open-agent-hackathon-2026  
-> 死线：UTC 2026-10-27 23:45（北京 10-28 07:45）  
-> 占位符用 `[[...]]` — 佳恒提交前替换。
+**Track 03 / HubCrew 已正式提交，核验时间为 2026-10-27 01:38 北京时间。** 当前状态以 [demo/SUBMISSION-STATUS.md](./demo/SUBMISSION-STATUS.md) 为准，最终英文文本见 [demo/submission-description.txt](./demo/submission-description.txt)。以下是原字段草稿与中文对照，已补齐实际材料入口，作为历史参考。
+
+硬截止：**2026-10-28 07:45 北京时间**（UTC 2026-10-27 23:45）。
 
 ---
 
-## English (paste into form)
+## English (archived field draft)
+
+The architecture below includes intended end-to-end behavior. The submitted demo shows two working local sponsor bridges; automatic HubCards/H-MEM/Zetaris dispatch and alert delivery are not claimed as demonstrated. See the final Description linked above.
 
 ### Project title
 **HubCrew: Named-Agent Reasoning Architecture for One-Person Home Ops**
@@ -34,34 +36,34 @@ Solo operators who run many specialized agents at home hit the same failure mode
 ### Technical approach
 - Architecture: Entry → Session/Scheduler → Memory (H-MEM) → Tools/Data (Zetaris + IM adapters) → Action/Alert.
 - Public code anchors:
-  - Submission repo: `[[https://github.com/wangwu-30/open-agent-2026]]` (docs + sponsor bridges + demo script)
+  - Submission repo: https://github.com/wangwu-30/open-agent-2026 (docs + sponsor bridges + demo script)
   - IM adapter layer: https://github.com/wangwu-30/imwire (public, MIT)
   - Team knowledge memory: https://github.com/wangwu-30/teamrecall (public, MIT)
-- HubCards / home crew runtime: demonstrated on device / Mac mini; **declared as pre-existing product code** (not all open-sourced tonight).
+- HubCards / home crew runtime: **declared as pre-existing product code**; the full runtime is not open-sourced in this submission. Demonstrated scope is recorded in the final Description.
 - Dev: Cursor / Codex on Mac mini for bridges; no fake sponsor screenshots.
 
 ### Demo link
-`[[YouTube / Loom / drive URL — 1–4 min, see DEMO-SCRIPT.md]]`
+Submitted via direct platform upload: https://iframe.mediadelivery.net/embed/778121/17cbf265-3373-4da8-a126-0daaaebf0eca (3:10 / 1080p). Public backup and upload record: [demo/DEMO-URL.md](./demo/DEMO-URL.md).
 
 ### Slide deck link
-`[[Google Slides / PDF URL — see slide outline in CHECKLIST]]`
+https://github.com/wangwu-30/open-agent-2026/blob/main/HubCrew-Open-Agent-2026.pptx
 
 ### GitHub repository
-`[[https://github.com/wangwu-30/open-agent-2026]]`  
-Related (declare in form): https://github.com/wangwu-30/imwire · https://github.com/wangwu-30/teamrecall
+https://github.com/wangwu-30/open-agent-2026
+Related (declared in submission): https://github.com/wangwu-30/imwire · https://github.com/wangwu-30/teamrecall
 
 ### Sponsor tech — Zetaris
 **Live (2026-10-26):** Docker Compose on Mac mini (`~/zetaris/zetaris-platform`); `./verify.sh` 9/9 PASS; UI http://localhost:3000. Read-only Lightning SQL via UI→API→driver verified (`SELECT 1`, `NY_TAXI.taxi_zones`, `TPCDS_DB.reason` → HubCrew P0–P2 handoff mapping). Evidence: `sponsors/zetaris/LIVE.md`, `sponsors/zetaris/query_home_ops.md` §3. Setup: https://zetaris.github.io/getting-started/
 
 ### Sponsor tech — Meterless
 **Live:** Meterless **H-MEM** via `agentathon-starter` (`remember`/`ask`/`audit`/`sleep`) as handoff+constitution memory spine — `sponsors/hmem-notebook/` (fed9a1d). Starter: https://github.com/Meterless/Meterless/tree/main/templates/agentathon-starter
-Nightshift: optional stretch only; not required for minimal score.
+Nightshift: archived stretch idea; not claimed as implemented in this submission.
 
-### Cursor / NVIDIA (if asked)
+### Cursor / NVIDIA (archived notes)
 - Cursor/Codex: used to implement sponsor bridges and docs on Mac mini (`taskq` jobs).
-- NVIDIA/Nemotron: **not claimed unless Nightshift path actually runs**; optional stretch only.
+- NVIDIA/Nemotron: **no execution claimed** in the submitted Description.
 
-### Pre-existing product code (declare)
+### Pre-existing product code (declared)
 HubCards (iOS entry), home multi-agent crew (班组), imwire, teamrecall, related home deployment (benefit). Hackathon delta: reasoning-architecture documentation, public submission repo, Meterless H-MEM bridge, Zetaris query path, demo + slides.
 
 ### Website
@@ -69,13 +71,13 @@ https://www.wangwu.ai
 
 ---
 
-## 中文对照（给佳恒审，不必整段贴英文表）
+## 中文对照（归档参考）
 
 **标题**：HubCrew：一人家用班组的命名 Agent 推理架构  
 **一句话**：HubCards 单入口 + 命名 agent 交接（未完成/失败路径/仍生效决策）+ 宪法偏好，把记忆变成可靠行动。  
 **赛道**：Track 03 Reasoning Architecture  
 **问题**：一人多 agent 时交接丢上下文、偏好与失败路径丢失、告警分散。  
 **方案**：单 agent=入口+自调度；协作在上层；G1 宪法；Meterless H-MEM 做记忆脊梁；Zetaris 做可查询数据层；HubCards/Telegram 送达。  
-**Demo / 仓 / 幻灯**：见占位符；仓默认 `open-agent-2026`。  
-**赞助商**：今晚按 `SPONSOR-PLAN.md` 最小双接入；**禁止空口声称已集成**。  
-**预存代码**：提交表如实 declare。
+**Demo / 仓 / 幻灯**：已提交，实际链接见上文与提交状态记录。
+**赞助商**：本地 H-MEM 桥与 Zetaris SQL 演示已交付，见 [SPONSOR-PLAN.md](./SPONSOR-PLAN.md)；样本优先级为人工映射，自动端到端送达仍为架构方向。
+**预存代码**：已在提交表如实 declare。

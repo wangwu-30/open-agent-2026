@@ -1,10 +1,10 @@
-# DEMO-SCRIPT — 1–4 分钟（冲 Demo 15）
+# DEMO-SCRIPT — 原分镜归档 / Demo 已提交
 
-官方要求：demo video **1–4 minutes**，展示主流程、如何解挑战、关键特性、**Zetaris & Meterless 如何接入**。
+**Track 03 / HubCrew 已 Submitted。** 当前状态见 [demo/SUBMISSION-STATUS.md](./demo/SUBMISSION-STATUS.md)。实际交付为 [3:10 / 1080p demo](./demo/hubcrew-demo.mp4) 与 [幻灯](./HubCrew-Open-Agent-2026.pptx)；视频已直接上传赛事平台，见 [DEMO-URL.md](./demo/DEMO-URL.md)。
 
-建议总长：**3:00–3:30**（留余量，勿超 4:00）。
+原分镜按官方 **1–4 minutes** 要求规划，建议总长 **3:00–3:30**。下表保留历史方案，不是待录制清单，也不表示所有设想均已实现。实际视频展示 H-MEM 真实跨进程检索记录与 Zetaris 浏览器查询；自动 HubCards / H-MEM / Zetaris 派工和告警送达未被声明为已演示。
 
-## 分镜
+## 原分镜（历史参考）
 
 | 时码 | 画面 | 口述（中/英可混，评委偏英 → 建议英主中辅） | 卡点 |
 |---:|---|---|---|
@@ -17,19 +17,17 @@
 | 3:05–3:25 | 架构一页（mermaid 导出图）+ GitHub URL | “Single agent = entry + own scheduler; collaboration sits above. Repo: github.com/wangwu-30/open-agent-2026.” | URL 停留 ≥3s |
 | 3:25–3:40 | 结束卡：Track 03 · pre-existing declared · sponsors named | “Pre-existing HubCards/crew declared. Meterless + Zetaris integrated as shown.” | **勿声称未拍到的能力** |
 
-## 录制清单
+## 已交付视频与核验记录
 
-- [ ] 麦克风清晰；分辨率 ≥ 1080p
-- [ ] 脱敏：无真实密钥、私人聊天全文
-- [ ] Meterless 与 Zetaris **各至少 10 秒实机**
-- [ ] 片尾贴：repo、wangwu.ai、作者 GitHub @wangwu-30
-- [ ] 上传：YouTube 未列出 / Loom / Drive；链接写入提交表
+- 视频为 3:10、1920 × 1080、英文合成旁白；已完整解码核验并抽帧检查，见 [video-qc.md](./demo/evidence/video-qc.md)。
+- H-MEM 写入与新进程检索使用真实输出并标明回放，Zetaris 使用实际浏览器录屏；证据保存在 [demo/evidence/](./demo/evidence/)。
+- 已完成平台上传与播放核验；YouTube / Loom 的建号门槛及平台上传结果见 [DEMO-URL.md](./demo/DEMO-URL.md)。
 
-## 备用（若 HubCards 当日崩）
+## 原备用方案（已归档）
 
-B-roll 顺序：架构图 → H-MEM CLI 全流程 → Zetaris SQL → imwire echo/assistant → 口头说明 HubCards 为默认告警面（配静态截图）。仍需声明 pre-existing + 何为今晚 delta。
+原 B-roll 方案：架构图 → H-MEM CLI 全流程 → Zetaris SQL → imwire echo/assistant → 口头说明 HubCards 为默认告警面（配静态截图）。该顺序仅保留规划背景，实际成片以视频和核验记录为准。预存代码与本次增量均已在提交中声明。
 
-## 幻灯提纲（§06 另要 slide deck；可另做 6–8 页）
+## 原幻灯提纲（历史参考；实际幻灯已提交）
 
 1. Problem & user  
 2. Solution one-liner  

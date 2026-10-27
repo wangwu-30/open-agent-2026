@@ -1,123 +1,34 @@
-# SPONSOR-PLAN — 今晚最小双接入（冲 Sponsor tech 10）
+# SPONSOR-PLAN — 双赞助交付记录 / Archived
 
-规则硬约束（活动页 §05）：**Every submission must integrate Zetaris and Meterless.**  
-§06 demo/slides/说明都要讲清二者如何用。  
-**本 bot 不写产品代码**；下列全部交给 **Mac mini Codex / taskq**。
+**Track 03 / HubCrew 已 Submitted，提交阶段已完成。** 核验时间为 **2026-10-27 01:38 北京时间**；状态和实际声明见 [demo/SUBMISSION-STATUS.md](./demo/SUBMISSION-STATUS.md) 与 [提交 Description](./demo/submission-description.txt)。原冲刺计划和派工指令已归档，本页记录实际交付范围。
 
-## 优先级
+原方案按活动规则 §05 的 Zetaris / Meterless 双赞助要求准备；两者用法已写入提交材料。完整架构方向与本次实际演示的边界如下。
 
-| P | 项 | 估时 | 冠军必要？ |
-|---|---|---|---|
-| P0 | Meterless H-MEM via agentathon-starter，接到「交接/决策」记忆脊梁 | 1–2h | **是** |
-| P0 | 公开仓 `wangwu-30/open-agent-2026` 放桥接+README+本目录文档 | 0.5h | **是** |
-| P1 | Zetaris 实例 + 只读 SQL + agent 决策前查询 1 次 | 2–4h（含装机/账号） | **是（规则）** |
-| P2 | Nightshift / Nemotron | 不排今晚 | 否（加分项） |
-| P2 | 深接 HubCards 原生 SDK | 不排今晚 | 否（录屏证明即可） |
+<!-- 保留桥接文档现有的 Task A / Task B 链接。 -->
+<a id="task-a--meterless-h-mem默认选这条最快可演示"></a>
 
----
+## Task A — Meterless H-MEM：本地桥已交付
 
-## Task A — Meterless H-MEM（默认选这条，最快可演示）
+- [sponsors/hmem-notebook/](./sponsors/hmem-notebook/README.md) 已提供 TypeScript CLI，调用官方参考引擎的 `remember`、`ask`、`audit`、`sleep` 服务；安装、复现步骤及命令到 service 的映射均在该 README。
+- Demo 展示真实写入后在新进程检索，包含 memory id、相关度与 provenance；[原始输出与执行记录](./demo/evidence/README.md) 已保存。
+- 演示使用 `retrieval-only` 模式与参考实现的确定性哈希向量。本地桥尚未自动连接 HubCards、G1 或 Zetaris。
 
-**目标**：班组交接包与关键决策写入 H-MEM；点名后 `ask` 带 provenance 召回；demo 能跑 `remember/ask/audit`。
+<a id="task-b--zetaris规则必接可能成-blocker"></a>
 
-**官方起点**：
-```bash
-npx degit meterless/meterless/templates/agentathon-starter hubcrew-hmem
-cd hubcrew-hmem
-npm install
-npm run setup   # 必做：vendor H-MEM
-npx tsx notebook.ts seed
-npx tsx notebook.ts ask "what did we decide about storage"
-```
-模板：https://github.com/Meterless/Meterless/tree/main/templates/agentathon-starter  
-引擎说明：`engines/hmem/AGENTS.md`
+## Task B — Zetaris：本机 SQL 与证据已交付
 
-### 交给 Mac mini Codex/taskq 的任务说明（可原样粘贴）
+- Mac mini 本机 Docker Compose 实例已实跑，`./verify.sh` **9/9 PASS**，见 [LIVE.md](./sponsors/zetaris/LIVE.md)。原“实例未安装”的阻塞已解除。
+- 已核验 `SELECT 1`、`NY_TAXI.taxi_zones LIMIT 5`、`TPCDS_DB.reason ORDER BY r_reason_sk LIMIT 5`；[查询记录](./sponsors/zetaris/query_home_ops.md#3-已实跑样本结果与-hubcrew-演示决策2026-10-26) 保存结果摘要与 P0–P2 交接优先级映射。
+- Demo 使用实际 Zetaris 浏览器查询录屏；[视频核验记录](./demo/evidence/video-qc.md) 已保存。
+- 查询对象是 supplied samples，优先级为人工演示映射；未声明生产家用数据或自动端到端派工、告警送达。
+- [SETUP.md](./sponsors/zetaris/SETUP.md) 保留接入准备阶段的安装与客户端参考；其中旧阻塞文字以 LIVE 记录为准。
 
-```
-【taskq】Open Agent 2026 · Meterless H-MEM bridge（勿改 HubCards / 班组主仓大范围重构）
+## Task C — 公开仓与提交材料：已完成
 
-目标：在 ~/src/open-agent-2026（或佳恒指定目录）落地可演示的 H-MEM 记忆脊梁，服务 Track03 HubCrew 叙事。
+- 已采用路径 C：[wangwu-30/open-agent-2026](https://github.com/wangwu-30/open-agent-2026) 保存架构文档、赞助桥、查询证据、[demo](./demo/hubcrew-demo.mp4) 与 [幻灯](./HubCrew-Open-Agent-2026.pptx)。
+- 相关公开代码：[imwire](https://github.com/wangwu-30/imwire)、[teamrecall](https://github.com/wangwu-30/teamrecall)。
+- HubCards、家用班组、imwire、teamrecall、benefit 已声明为预存代码；主运行时未全部开源的边界已保留。
 
-步骤：
-1) degit meterless/meterless/templates/agentathon-starter 到仓库子目录 sponsors/hmem-notebook
-2) npm install && npm run setup（确保 vendor/ 存在；README 写明 engine source）
-3) 增加 scripts/handoff_seed.ts（或扩展 notebook.ts）：
-   - remember 至少 3 条结构化记忆：unfinished_work / failed_path / live_decision（可用中英短句）
-   - ask 查询「当前仍生效的部署决策」并打印 memory id + provenance
-   - audit 一条 id
-   - sleep --preview（可选，入镜加分）
-4) README 用表格映射：命令 → H-MEM service（Mining/Store/Retrieval/TrustLedger/Sleep）——评委找这个
-5) 不要提交 .notebook/、vendor/、密钥；setup 步骤写进 README
-6) 验收：冷启动后仍能 ask 到 seed 记忆；终端输出可录屏
+## 已归档的备选方案
 
-禁止：伪造 retrieval；把普通 JSON 文件说成 H-MEM；改 imwire/teamrecall 主线 API 除非必要。
-```
-
-**验收**：录屏段 1:20–2:00 可直接用。
-
----
-
-## Task B — Zetaris（规则必接；可能成 blocker）
-
-**目标**：任意 Zetaris 实例（本机或 AWS）上跑通只读 SQL；在推理前用查询结果影响「告警优先级 / 交接顺序」之一。
-
-**官方起点**：https://zetaris.github.io/getting-started/  
-辅助仓：https://github.com/zetaris/getting-started  
-凭证只放 `.env.local`。
-
-### 交给 Mac mini Codex/taskq 的任务说明
-
-```
-【taskq】Open Agent 2026 · Zetaris read-path（最小）
-
-前提：佳恒已在 Zetaris Cloud 选好 Local 或 Managed AWS，并完成登录。若尚未装实例——先停，列出安装 blocker，不要瞎编连接成功。
-
-步骤：
-1) clone zetaris/getting-started；按 docs/connections/client-setup.md 配 .env.local
-2) python3 scripts/preflight.py --jdbc（或文档推荐检查）；分开报告 JDBC / REST
-3) 只读：SELECT 1；SHOW LIGHTNING DATABASES；对 NY_TAXI 或 TPCDS_DB 做 SELECT … LIMIT 5
-4) 在 open-agent-2026/sponsors/zetaris/ 写 query_home_ops.md：记录所用 SQL、结果摘要、如何影响 HubCrew 决策（例：错误率/积压阈值 → 提高告警优先级）
-5) 可选：一个 30 行 Python/TS 包装，把查询 JSON 打成 agent 可读 brief（无密钥入库）
-6) README 写清：实例类型（local/AWS）、演示用表、与 Track03 data 平面的关系
-
-禁止：提交密码/API key；宣称「联邦了生产家用库」若只用 sample；跳过 preflight 假装成功。
-```
-
-**若今晚装实例来不及**：仍须在提交说明写 **诚实状态** + 剩余步骤；同时 **优先抢出 Meterless**，并尽量用 Zetaris sample 的最短路径（文档称可用 supplied samples 做项目）。**空提交双赞助 = 违规风险 + Sponsor 0。**
-
----
-
-## Task C — 公开仓路径（默认 C，最快可交）
-
-```
-【taskq】创建并推送 public 仓 wangwu-30/open-agent-2026
-
-内容：
-- README.md：项目一句话、Track03、架构图链接、demo 链接占位、赞助商用法、预存代码 declare
-- docs/ 放入本目录已写的 DECISION/ARCHITECTURE/DEMO-SCRIPT/SUBMISSION 精简版
-- sponsors/hmem-notebook（Task A）
-- sponsors/zetaris/（Task B 产物）
-- 链到 https://github.com/wangwu-30/imwire 与 teamrecall
-LICENSE: MIT
-
-验收：匿名浏览器可打开；README 从零到跑通 H-MEM ≤ 5 分钟。
-```
-
-### 路径对比（已评估）
-
-| 路径 | 内容 | 速度 | 风险 |
-|---|---|---|---|
-| **C（默认）** | 新建 `open-agent-2026` 文档+桥 | 最快 | 需声明主运行时未全开源 |
-| A | HubCards/班组仓改 public 或镜像 | 中 | 私货/密钥清理成本 |
-| B | 只交 imwire + 录屏 | 快 | 叙事偏 IM，Track03 记忆/数据层弱 |
-
-**推荐：C + 链 imwire/teamrecall + 录屏证 HubCards。**
-
----
-
-## 非目标
-
-- 本 bot / 云端 agent **不**直接改佳恒产品仓。
-- 不接 Wildcard 专轨（见 DECISION）。
-- Nightshift：仅当 Task A/B/C 完成后有余力再开。
+原路径 A（HubCards / 班组公开镜像）、路径 B（仅 imwire + 录屏）、Nightshift / Nemotron 和 HubCards 原生 SDK 深接均为旧备选或扩展设想，已退出本次提交待办，不声明为已实现。提交完成情况与平台回执统一见 [SUBMISSION-STATUS.md](./demo/SUBMISSION-STATUS.md)。
